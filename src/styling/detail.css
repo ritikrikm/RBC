@@ -1,0 +1,87 @@
+/* detail.css */
+
+/* Overlay styles */
+.roadmap-overlay {
+ position: fixed;
+ top: 0;
+ left: 0;
+ width: 100%;
+ height: 100%;
+ background-color: rgba(0, 0, 0, 0.4); /* Make overlay less dark */
+ z-index: 10; /* Ensure this is above the content but below the popup */
+ display: none;
+ justify-content: center;
+ align-items: center;
+}
+
+/* Show the overlay when the detail panel is visible */
+.roadmap-overlay--visible {
+ display: flex;
+}
+
+/* Detail panel styles */
+.roadmap-detail {
+ background: #fff;
+ border: 1px solid #ccc;
+ border-radius: 8px; /* Optional: if you want rounded corners */
+ box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: if you want shadow */
+ 
+ overflow-y: auto; /* Allows scrolling */
+ position: relative; /* Changed to relative for positioning inside the overlay */
+ max-width: 500px; /* Maximum width of the detail panel, adjust as needed */
+ width: 100%; /* Width of the detail panel, adjust as needed */
+ transform: scale(1.05); /* Start slightly larger for animation */
+ opacity: 0; /* Start transparent for animation */
+ z-index: 10;
+ display: none; /* Hide the detail by default */
+ transition: transform 0.3s, opacity 0.3s, display 0.3s; /* Add display to the transition */
+ /* Enable Flexbox layout */
+ display: flex;
+ flex-direction: column; /* Stack children vertically */
+ align-items: flex-start;
+}
+
+/* Class that toggles the visibility of the detail panel */
+.roadmap-detail--visible {
+ display: flex; /* Show the detail when visible */
+ transform: scale(1); /* Scale to natural size */
+ opacity: 1; /* Fully opaque */
+}
+
+/* Rest of the detail styles */
+.roadmap-detail__title {
+ padding: 20px;
+align-self: center;
+ border-bottom: 1px solid #eee;
+ font-size: 1.5rem;
+ color: #333;
+}
+
+.roadmap-detail__description {
+ padding: 20px;
+ color: #666;
+ line-height: 1.5;
+}
+
+.roadmap-detail__back-button {
+ display: block;
+ padding: 10px 20px;
+ margin: 20px;
+ background-color: #007bff;
+ color: #fff;
+ text-align: center;
+ border-radius: 4px;
+ cursor: pointer;
+ border: none;
+}
+
+.roadmap-detail__back-button:hover {
+ background-color: #0056b3;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+ .roadmap-detail {
+    width: 100%; /* Full width on smaller screens */
+ }
+}

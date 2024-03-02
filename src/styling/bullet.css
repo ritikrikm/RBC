@@ -1,0 +1,45 @@
+/* statusBullet.css */
+.status-bullet {
+    display: inline-block;
+    border-radius: 50%;
+  }
+  
+  .status-bullet--small {
+    height: 8px;
+    width: 8px;
+  }
+  
+  .status-bullet--medium {
+    height: 12px;
+    width: 12px;
+  }
+  
+  .status-bullet--large {
+    height: 16px;
+    width: 16px;
+  }
+  
+  .status-bullet--neutral {
+    background-color: #6c757d;
+  }
+  
+  .status-bullet--primary {
+    background-color: #007bff;
+  }
+  
+  .status-bullet--success {
+    background-color: #28a745;
+  }
+  
+  .status-bullet--info {
+    background-color: #17a2b8;
+  }
+  
+  .status-bullet--warning {
+    background-color: #ffc107;
+  }
+  
+  .status-bullet--danger {
+    background-color: #dc3545;
+  }
+  

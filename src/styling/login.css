@@ -1,0 +1,16 @@
+/* Login.css */
+
+.login-form {
+    max-width: 300px;
+    margin: auto;
+  }
+  
+  .input-group {
+    margin-bottom: 10px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  

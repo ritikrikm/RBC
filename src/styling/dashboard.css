@@ -1,0 +1,236 @@
+/* Existing styles.css content */
+body {
+  background-color: #1a1a2e;
+  color: white;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0px;
+}
+
+header, footer {
+  padding: 10px;
+  text-align: center;
+  background-color: #16213e;
+}
+
+.roadmaps-container {
+  text-align: center;
+  padding: 20px;
+}
+
+.roadmap-section h2 {
+  margin-top: 30px;
+}
+
+.roadmap-row {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.roadmap-category, .roadmap-item {
+  background-color: #16213e;
+  padding: 20px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+  width: calc(33.333% - 20px);
+  box-sizing: border-box;
+}
+
+.roadmap-category:hover, .roadmap-item:hover {
+  background-color: #0f3460;
+}
+
+.create-roadmap button {
+  background-color: #0f3460;
+  color: #e0e0e0;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 20px;
+}
+
+.create-roadmap button:hover {
+  background-color: #16213e;
+}
+
+input[type="submit"] {
+  background-color: #e94560;
+  border: none;
+  padding: 10px 20px;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: #a73344;
+}
+
+@media (max-width: 768px) {
+  .roadmap-category, .roadmap-item {
+      width: calc(50% - 20px);
+  }
+}
+
+@media (max-width: 480px) {
+  .roadmap-category, .roadmap-item {
+      width: 100%;
+  }
+}
+
+/* New styles for the detail panel */
+.roadmap-detail-panel {
+  position: fixed;
+  top: 0;
+  right: -100%; /* Start off-screen to the right */
+  width: 30%; /* Adjust based on your preference */
+  height: 100vh; /* Full viewport height */
+  background-color: #1a1a2e; /* Match the body background color */
+  color: white; /* Match the body text color */
+  box-shadow: -2px 0 5px rgba(0,0,0,0.5);
+  transition: right 0.3s ease-in-out;
+  overflow-y: auto; /* Add scroll for content overflow */
+}
+
+.roadmap-detail-panel--visible {
+  right: 0; /* Slide in to view */
+}
+/* Styles for the Roadmap Header */
+.roadmap-header {
+  background-color: #16213e; /* Match the color from your image */
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+.roadmap-header h1 {
+  background-image: linear-gradient(to right, #abc9e4, #687edd); /* Adjust the colors to match RBC's branding */
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  font-size: 2.5rem; /* Adjust the size as needed */
+  font-weight: bold;
+  text-align: center;
+  margin: 0;
+  padding: 20px 0; /* Adjust the padding as needed */
+}
+
+
+.roadmap-header p {
+  margin: 10px 0;
+}
+
+.roadmap-announcement {
+  background-color: #4e0ecc; /* A purple background for the announcement */
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 5px;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.roadmap-announcement span {
+  color: #f0f0f0; /* A very light shade for the 'NEW' text */
+  margin-right: 5px;
+}
+.category-logo {
+  max-width: 60%; /* Adjust the width as needed */
+  max-height: 60%; /* Adjust the height as needed */
+  display: block;
+  margin: 0 auto; /* This centers the logo in the container */
+  padding: 10px; /* Adjust the padding to create space around the logo */
+}
+.roadmap-flowchart-container {
+  width: 600px; /* Adjust the width as needed */
+  height: 400px; /* Adjust the height as needed */
+  border: 1px solid #ccc; /* Optional: adds a border around the flowchart container */
+  overflow: auto; /* Allows scrolling within the container if content overflows */
+  position: relative; /* Ensures the container's dimensions are respected */
+  margin: auto; /* Centers the container if its width is less than its parent's width */
+}
+.toggle-switch {
+  position: relative;
+  width: 90px;
+  display: inline-block;
+  text-align: left;
+  top: 5px;
+}
+
+.toggle-switch-checkbox {
+  display: none;
+}
+
+.toggle-switch-label {
+  display: block;
+  overflow: hidden;
+  cursor: pointer;
+  border: 1px solid #e8eae9; /* Border color */
+  border-radius: 20px;
+}
+
+.toggle-switch-inner {
+  display: block;
+  width: 200%;
+  margin-left: -100%;
+  transition: margin 0.3s ease-in 0s;
+  padding: 5px;
+  box-sizing: border-box;
+}
+
+.toggle-switch-checkbox:checked + .toggle-switch-label .toggle-switch-inner {
+  margin-left: 0;
+}
+
+.toggle-switch-switch {
+  display: block;
+  width: 18px;
+  margin: 5px;
+  background: #ffffff;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 56px;
+  border: 2px solid #e8eae9; /* Border color */
+  border-radius: 20px;
+  transition: all 0.3s ease-in 0s;
+}
+
+.toggle-switch-checkbox:checked + .toggle-switch-label .toggle-switch-switch {
+  right: 0px;
+}
+
+.toggle-switch-label:before,
+.toggle-switch-label:after {
+  content: attr(data-yes);
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 50%;
+  line-height: 30px; /* Adjust height */
+  color: #ffffff; /* Text color */
+  font-family: Arial, sans-serif; /* Font family */
+  font-size: 14px; /* Font size */
+  box-sizing: border-box;
+}
+
+.toggle-switch-label:after {
+  content: attr(data-no);
+  left: 50%;
+  padding-left: 15px;
+  text-align: left;
+}
+
+.toggle-switch-checkbox:checked + .toggle-switch-label:before {
+  color: #4fbe79; /* Color when switch is active */
+}
+
+.toggle-switch-checkbox:checked + .toggle-switch-label:after {
+  color: #999999; /* Color when switch is inactive */
+}
